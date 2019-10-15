@@ -3,5 +3,18 @@
 
 body {
 	margin: 0;
-	height: 100vh;
+  height: 100vh;
+  background-color:$color-white;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page__main{
+  background-color:white;
+  padding:25px;
+  border-radius: 10px;
+  -webkit-box-shadow: 10px 10px 19px 1px rgba(0,0,0,0.41);
+  -moz-box-shadow: 10px 10px 19px 1px rgba(0,0,0,0.41);
+  box-shadow: 10px 10px 19px 1px rgba(0,0,0,0.41);
 }
