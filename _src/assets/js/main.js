@@ -36,7 +36,11 @@ function showResults() {
   fetch(USER_ENDPOINT + query)
     .then(response => response.json())
     .then(data => {
-      createUserElements(data.login, data.name, data.bio, data.avatar_url);
+      if (data.name === undefined) {
+        alert('does not exist');
+      } else {
+        createUserElements(data.login, data.name, data.bio, data.avatar_url);
+      }
     });
 
   showRepos(query);
@@ -55,7 +59,7 @@ function showRepos(query) {
                   <div>${item.stargazers_count}</div>
                 </li>`;
       }
-      reposTitle.innerHTML='Repositorios';
+      reposTitle.innerHTML = 'Repositorios';
       reposList.innerHTML = acc;
     });
 }
@@ -67,5 +71,5 @@ function pressEnter(event) {
 }
 
 btn.addEventListener('click', showResults);
-document.addEventListener('keyup',pressEnter);
+document.addEventListener('keyup', pressEnter);
 
