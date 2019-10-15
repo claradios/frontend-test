@@ -3,44 +3,37 @@
 const input = document.querySelector('.main__input-search');
 const btn = document.querySelector('.main__btn-search');
 const userContainer = document.querySelector('.main__user_container');
+const ENDPOINT = 'https://api.github.com/users/';
 
 
+function createUserElements(login, name, bio, avatar) {
 
+  const newSpan = document.createElement('span');
+  const newTitle = document.createElement('h2');
+  const newImg = document.createElement('img');
+  const newText = document.createElement('p');
+  const userLogin = document.createTextNode(`@${login}`);
+  const userName = document.createTextNode(name);
+  const userBio = document.createTextNode(bio);
 
-// function callApi() {
-//   fetch(`https://api.github.com/users/${input.value}`)
-//     .then(response => response.json())
-//     .then(data => {
-//       console.log(data);
-//     });
-// }
+  newSpan.appendChild(userLogin);
+  newTitle.appendChild(userName);
+  newText.appendChild(userBio);
+  newImg.src = avatar;
+
+  userContainer.appendChild(newSpan);
+  userContainer.appendChild(newTitle);
+  userContainer.appendChild(newText);
+  userContainer.appendChild(newImg);
+}
 
 function showResults() {
-
-  fetch(`https://api.github.com/users/${input.value}`)
+  const query = input.value;
+  fetch(ENDPOINT + query)
     .then(response => response.json())
     .then(data => {
-      const newSpan = document.createElement('span');
-      const newTitle = document.createElement('h2');
-      const newImg = document.createElement('img');
-      const newText = document.createElement('p');
-
-      const userName = document.createTextNode(`@${data.login}`);
-      const name = document.createTextNode(data.name);
-      const bio = document.createTextNode(data.bio);
-
-      newImg.src = data.avatar_url;
-
-      newSpan.appendChild(userName);
-      newTitle.appendChild(name);
-      newText.appendChild(bio);
-
-      userContainer.appendChild(newTitle);
-      userContainer.appendChild(newText);
-      userContainer.appendChild(newImg);
-
+      createUserElements(data.login, data.name, data.bio, data.avatar_url);
     });
-
 }
 
 btn.addEventListener('click', showResults);
