@@ -39,12 +39,11 @@ function createUserElements(login, name, bio, avatar) {
 }
 
 function createErrorMessage() {
-  const errorContainer = document.createElement('div');
   const errorText = document.createElement('p');
   const errorMessage = document.createTextNode('Does not exist');
   errorText.appendChild(errorMessage);
-  errorContainer.appendChild(errorText);
-  userContainer.appendChild(errorContainer);
+  userContainer.appendChild(errorText);
+  errorText.classList = 'error__message';
 }
 
 function showResults() {
