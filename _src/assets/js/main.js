@@ -60,6 +60,12 @@ function showRepos(query) {
     });
 }
 
-btn.addEventListener('click', showResults);
+function pressEnter(event) {
+  if (event.key === 'Enter') {
+    showResults();
+  }
+}
 
+btn.addEventListener('click', showResults);
+document.addEventListener('keyup',pressEnter);
 
