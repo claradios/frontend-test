@@ -28,6 +28,10 @@ function createUserElements(login, name, bio, avatar) {
   userContainer.appendChild(newImg);
 }
 
+// function createRepoElements(id) {
+//   console.log(id);
+// }
+
 function showResults() {
 
   const query = input.value;
@@ -44,9 +48,11 @@ function showResults() {
 function showRepos(query) {
   const REPOS_ENDPOINT = `https://api.github.com/users/${query}/repos`;
   fetch(REPOS_ENDPOINT)
-    .then(response=>response.json())
-    .then(data =>{
-      console.log(data);
+    .then(response => response.json())
+    .then(data => {
+      for (const item of data) {
+        console.log(item.name);
+      }
     });
 }
 
