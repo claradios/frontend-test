@@ -1,3 +1,7 @@
 'use strict';
 
-console.log('>> Ready :)');
+
+const input = document.querySelector ('.main__input-search');
+const btn = document.querySelector('.main__btn-search');
+
+
