@@ -72,8 +72,14 @@ function showRepos(query) {
       for (const item of data) {
         acc += `<li class="repo_item">
                   <h3 class="repo_title">${item.name}</h3>
-                  <div>${item.forks_count}</div>
-                  <div>${item.stargazers_count}</div>
+                  <div>
+                    <span><i class="fas fa-star"></i></span>
+                    <span>${item.forks_count}</span>
+                  </div>
+                  <div>
+                    <span><i class="fas fa-code-branch"></i></span>
+                    <span> ${item.stargazers_count}</span>
+                  </div>
                 </li>`;
       }
       reposTitle.innerHTML = 'Repositorios';
