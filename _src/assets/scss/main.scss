@@ -4,17 +4,37 @@
 body {
 	margin: 0;
   height: 100vh;
-  background-color:$color-white;
+  background-color:$color-grey-general;
   display:flex;
   justify-content: center;
   align-items: center;
+  ::-webkit-scrollbar {
+    display: none;
+}
 }
 
 .page__main{
+  max-height:600px;
+  width:600px;
+  font-family: $txt-font-main;
   background-color:white;
   padding:25px;
   border-radius: 10px;
+  overflow:auto;
   -webkit-box-shadow: 10px 10px 19px 1px rgba(0,0,0,0.41);
   -moz-box-shadow: 10px 10px 19px 1px rgba(0,0,0,0.41);
   box-shadow: 10px 10px 19px 1px rgba(0,0,0,0.41);
+  .main__input-search,.main__btn-search{
+    border-radius:3px;
+    border:1px solid $color-grey-line;
+    margin:5px;
+    padding:10px;
+    text-transform:capitalize;
+    font-weight: 700;
+    }
+  .main__input-search{
+    width:250px;
+  }
 }
+
+
