@@ -29,6 +29,15 @@ function createUserElements(login, name, bio, avatar) {
   userContainer.appendChild(newImg);
 }
 
+function createErrorMessage() {
+  const errorContainer = document.createElement('div');
+  const errorText = document.createElement('p');
+  const errorMessage = document.createTextNode('Does not exist');
+  errorText.appendChild(errorMessage);
+  errorContainer.appendChild(errorText);
+  userContainer.appendChild(errorContainer);
+}
+
 function showResults() {
 
   const query = input.value;
@@ -37,7 +46,7 @@ function showResults() {
     .then(response => response.json())
     .then(data => {
       if (data.name === undefined) {
-        alert('does not exist');
+        createErrorMessage();
       } else {
         createUserElements(data.login, data.name, data.bio, data.avatar_url);
       }
