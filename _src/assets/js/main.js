@@ -3,10 +3,9 @@
 const input = document.querySelector('.main__input-search');
 const btn = document.querySelector('.main__btn-search');
 const userContainer = document.querySelector('.main__user_container');
-const reposContainer = document.querySelector('.main__repos_container');
+const reposTitle = document.querySelector('.main__repos_title');
 const reposList = document.querySelector('.main__repos_list');
 const USER_ENDPOINT = 'https://api.github.com/users/';
-
 
 
 function createUserElements(login, name, bio, avatar) {
@@ -54,6 +53,7 @@ function showRepos(query) {
                   <h3 class="repo_title">${item.name}</h3>
                 </li>`;
       }
+      reposTitle.innerHTML="Repositorios";
       reposList.innerHTML = acc;
     });
 }
