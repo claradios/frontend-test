@@ -15,7 +15,7 @@ body {
 
 .page__main{
   max-height:600px;
-  width:600px;
+  width:400px;
   font-family: $txt-font-main;
   background-color:white;
   padding:25px;
@@ -34,6 +34,21 @@ body {
     }
   .main__input-search{
     width:250px;
+  }
+  .main__user_container{
+    display:flex;
+    padding:15px;
+    .user__bio-info{
+      padding-left:15px;
+    }
+    .user__picture{
+      width:100px;
+      height:100px;
+      .picture__img{
+        width:100%;
+        border-radius:5px;
+      }
+    }
   }
 }
 

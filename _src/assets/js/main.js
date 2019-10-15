@@ -9,11 +9,17 @@ const USER_ENDPOINT = 'https://api.github.com/users/';
 
 
 function createUserElements(login, name, bio, avatar) {
+  const newImgContainer = document.createElement('div');
+  newImgContainer.className = 'user__picture';
+  const newImg = document.createElement('img');
+  newImg.className='picture__img';
 
+  const newBioContainer = document.createElement('div');
+  newBioContainer.className = 'user__bio-info';
   const newSpan = document.createElement('span');
   const newTitle = document.createElement('h2');
-  const newImg = document.createElement('img');
   const newText = document.createElement('p');
+
   const userLogin = document.createTextNode(`@${login}`);
   const userName = document.createTextNode(name);
   const userBio = document.createTextNode(bio);
@@ -23,10 +29,13 @@ function createUserElements(login, name, bio, avatar) {
   newText.appendChild(userBio);
   newImg.src = avatar;
 
-  userContainer.appendChild(newSpan);
-  userContainer.appendChild(newTitle);
-  userContainer.appendChild(newText);
-  userContainer.appendChild(newImg);
+  newImgContainer.appendChild(newImg);
+  newBioContainer.appendChild(newSpan);
+  newBioContainer.appendChild(newTitle);
+  newBioContainer.appendChild(newText);
+
+  userContainer.appendChild(newImgContainer);
+  userContainer.appendChild(newBioContainer);
 }
 
 function createErrorMessage() {
