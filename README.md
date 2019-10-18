@@ -1,48 +1,16 @@
-![Adalab](_src/assets/images/logo-adalab-80px.png)
-# Adalab web starter kit
-Ahoy! Esta es nuestro Starter Kit en node/gulp para este primer contacto con el desarrollo web
-Incluye SCSS, un sistema de plantillas HTMl y un web server.
+# FrontendTestSolved
 
-## Guía de inicio rápido
-Necesitarás instalar [Node.js](https://nodejs.org/) y [Gulp](https://gulpjs.com) para trabajar con este Starter Kit, luego:
-1. Descarga o clona el repositorio
-2. Instala las dependencias locales con `$ npm install`
-3. Arranca el kit con `$ gulp`
+## Quickly start:
+In order to include SASS and have a basic structure I have used a kit with gulp.
+You need to have the following installed: [Node.js](https://nodejs.org/) y [Gulp](https://gulpjs.com) after that:
+1. Download o clone this repository
+2. Install local dependencies with `$ npm install`
+3. Start the kit with `$ gulp` or `$ npm start`
 
-## Espera, ¿esto se hace siempre?
-> ### Solo una vez al principio en cada ordenador que utilicemos:
-- Instalamos node
-- Instalamos el comando de gulp de forma global para poder usarlo desde cualquier carpeta usando `npm install --global gulp-cli`
+## Project structure
+The **gulpfile.js** uses a config JSON with the files rootes to watch and create.
 
-> ### Cada vez que descarguemos o clonemos un repo:
-- `npm install` para instalar los paquetes necesarios para convertir Sass a CSS, minizarlo, etc.
-
-> ### Cada vez que estemos trabajando con nuestro código:
-- Desde nuestra terminal, ejecutamos el comando `gulp` para que realice la tarea por defecto, que en el caso del `gulpfile.js` que tenemos en adalab-web-starter-kit estará pendiente de nuestros archivos Sass, html y JavaScript y los compilará, minificará y/o recargará el servidor cada vez que hagamos un cambio
-
-## Tareas de gulp incluidas
-### Inicio de un web server para desarrollo
-```
-$ gulp
-```
-Lanza un webserver con BrowserSync y varios watchers estarán pendientes de los archivos SCSS/JS/HTML, en la carpeta **public/**, para recargar el navegador cuando se necesite.
-
-### Versión lista para subir a producción
-```
-$ gulp docs
-```
-En la carpeta **docs/** genera los CSS y JS minimizados y sin sourcemaps listos para subir al repo y activar GitHub Pages en `master/docs`.
-
-### Flujo de archivos con gulp
-
-Estas tareas de gulp producen el siguiente flujo de archivos:
-
-![Gulp flow](./gulp-flow.png)
-
-## Estructura del proyecto
-Nuestro **gulpfile.js** usa un JSON de configuración con las rutas de los archivos a generar/vigilar.
-
-La estructura de carpetas tiene esta pinta:
+The folders are organized with this structure:
 ```
 /
 `- _src
@@ -58,20 +26,49 @@ La estructura de carpetas tiene esta pinta:
 
 ```
 
-## HTML
-Viene incluído el paquete [**gulp-html-partial**](https://www.npmjs.com/package/gulp-html-partial) que nos va a permitir tener un sistema de plantillas html
+## GOALS
 
-## Imágenes e iconos
-Tenemos en **_src/** una carpeta para las imágenes del proyecto y una para los iconos como el favicon o los iconos de dispositivos móviles. Estos últimos se generan en la raíz de las carpetas **public/** y **docs/**
+#### The main goal of this tech test is to create a client side web application that reproduces the screenshots below by using [GitHub API](https://developer.github.com/v3/) .
 
-## CSS
-Viene incluído el paquete [**gulp-combine-mq**](https://www.npmjs.com/package/gulp-combine-mq) que agrupa todas las mediaqueries al final del documento css.
+We will only evaluate the client side code and the criteria will be based mainly on:
 
-## JS
-Podemos usar parciales de JS: en el JSON de configuración, **config.json** especificamos los archivos JS que utilizamos y en el orden que deben procesarse.
+1. Good use of **pure Javascript** language without external libraries and frameworks like jQuery, React...
+2. Clean HTML and CSS markup
+3. Clean, maintainable & easy-to-read
+4. Good architectural practices
 
-## ¿Cómo actualizo si tengo una versión anterior?
-En principio puedes descargar todos los archivos fuera de **_src/** y sustituir los de tu proyecto. Además deberías replicar la estructura de carpetas dentro de **_src/**.
+## HOW TO START
 
-## Falta algo?
-Echas de menos que el kit haga algo en concreto? Pidelo sin problema a través de los Issues o si te animas a mejorarlo mándanos un PR :)
+1. Investigate the GitHub API calls for `user` and `repos` (for example: test them in the browser)
+2. Launch the web application, for example with: `python -m SimpleHTTPServer 1337`
+3. Open the browser with http://localhost:1337/ and start coding!
+
+## NOT REQUIRED, BUT IMPRESSIVE
+
+- Adding Unit Testing. External libraries limitation doesn't apply here, you can use Jasmine, Karma...
+- Build System (browseriy, webpack, parcel..)
+- Keep in consideration browsers support
+- ES6+
+- SASS
+
+
+## SCREENSHOTS
+
+#### First Screen
+
+The user can search a username of GitHub
+
+![](https://drive.google.com/uc?export=view&id=1V19nQhn7Bn3E-sBNBFtFJIatSaqLUoUj)
+
+#### Success Screen
+
+If the searched username does exist: The searched user profile is displayed with all his repositories
+
+![](https://drive.google.com/uc?export=view&id=1LHyqNTFVQZQ1tdidLXLrCOxo0w6JK9oa)
+
+#### Error Screen
+
+If the searched username does not exist: An error is shown
+
+![](https://drive.google.com/uc?export=view&id=1uIajOBQvo4ugtoxkga8KPbY5x2PlHh0j)
+
