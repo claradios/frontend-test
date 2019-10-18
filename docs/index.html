@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+    
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"
+        />
+        <title>Marfeel Test</title>
+        <link rel="icon" href="./favicon.png" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="./assets/css/main.css" />
+    </head>
+    
+    <body>
+        <div class="page">
+            <header class="page__header"></header>
+            <main class="page__main">
+                <section class="main__search_container">
+                    <label for="search" class="main__input-label">Introduce un usuario de Github</label>
+                    <input id="search" type=text class="main__input-search"
+                    placeholder="Search username...">
+                    <button class="main__btn-search">Search</button>
+                </section>
+                <section class="main__results_container">
+                    <div class="main__user_container"></div>
+                    <div class="main__repos_container hidden">
+                         <h3 class="main__repos_title"></h3>
+
+                        <ul class="main__repos_list"></ul>
+                    </div>
+                </section>
+            </main>
+        </div>
+        <script src="https://kit.fontawesome.com/64d491ccc4.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+
+</html>
