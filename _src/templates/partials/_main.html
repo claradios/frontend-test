@@ -1,9 +1,16 @@
 <main class="page__main">
-  <input type=text class="main__input-search" placeholder="Search username...">
-  <button class="main__btn-search">search</button>
-  <div class="main__user_container"></div>
-  <div class="main__repos_container">
-    <h3 class="main__repos_title"></h3>
-    <ul class="main__repos_list"></ul>
-  </div>
+  <section class="main__search_container">
+    <label for="search" class="main__input-label">Introduce un usuario de Github</label>
+    <input id="search" type=text class="main__input-search" placeholder="Search username...">
+    <button class="main__btn-search">Search</button>
+  </section>
+  <section class="main__results_container">
+      <div class="main__user_container">
+        </div>
+        <div class="main__repos_container hidden">
+          <h3 class="main__repos_title"></h3>
+          <ul class="main__repos_list"></ul>
+        </div>
+  </section>
+
 </main>
